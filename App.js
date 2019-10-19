@@ -4,6 +4,7 @@ import { createStackNavigator } from "react-navigation-stack";
 import DetailPage from "./components/DetailPage";
 import HomePage from "./components/HomePage";
 import LoginPage from "./components/LoginPage";
+import NewsPage from "./components/NewsPage";
 
 const AppNavigator = createStackNavigator(
   {
@@ -19,13 +20,19 @@ const AppNavigator = createStackNavigator(
         title: "Log In"
       }
     },
-    Detail: {
-      screen: DetailPage,
+    News: {
+      screen: NewsPage,
       navigationOptions: {
         title: "News"
       }
+    },
+    Detail: {
+      screen: DetailPage,
+      navigationOptions: {
+        title: "Detail"
+      }
     }
   },
-  { initialRouteName: "Login" }
+  { initialRouteName: "Home" }
 );
 export default createAppContainer(AppNavigator);
