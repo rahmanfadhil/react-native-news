@@ -16,7 +16,8 @@ const AppNavigator = createStackNavigator(
     Login: {
       screen: LoginPage,
       navigationOptions: {
-        title: "Log In"
+        title: "Log In",
+        headerLeft: null
       }
     },
     Detail: {
@@ -26,6 +27,6 @@ const AppNavigator = createStackNavigator(
       }
     }
   },
-  { initialRouteName: "Login" }
+  { initialRouteName: "Home" }
 );
 export default createAppContainer(AppNavigator);

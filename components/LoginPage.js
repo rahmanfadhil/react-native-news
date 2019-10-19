@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, TextInput, Button, Alert } from "react-native";
+import { View, TextInput, Button, Alert, AsyncStorage } from "react-native";
 
 export default function LoginPage(props) {
   const [email, setEmail] = useState("");
@@ -31,8 +31,9 @@ export default function LoginPage(props) {
       />
       <Button
         title="Log In"
-        onPress={() => {
+        onPress={async () => {
           if (email === "rhmnfadhil@gmail.com" && password === "12345") {
+            await AsyncStorage.setItem("isLoggedIn", "true");
             props.navigation.navigate("Home");
           } else {
             Alert.alert("Login Gagal", "Email atau password anda salah!");
