@@ -1,6 +1,3 @@
-import React from "react";
-import { TouchableOpacity } from "react-native";
-import { MaterialIcons } from "@expo/vector-icons";
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 
@@ -12,20 +9,8 @@ const AppNavigator = createStackNavigator(
   {
     Home: {
       screen: HomePage,
-      navigationOptions: props => {
-        return {
-          title: "Home",
-          headerLeft: (
-            <TouchableOpacity
-              style={{ marginLeft: 15 }}
-              onPress={() => {
-                props.navigation.toggleDrawer();
-              }}
-            >
-              <MaterialIcons size={28} name="menu" />
-            </TouchableOpacity>
-          )
-        };
+      navigationOptions: {
+        title: "Home"
       }
     },
     Login: {
@@ -41,6 +26,6 @@ const AppNavigator = createStackNavigator(
       }
     }
   },
-  { initialRouteName: "Home" }
+  { initialRouteName: "Login" }
 );
 export default createAppContainer(AppNavigator);
